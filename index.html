@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners -->
+  <meta name="description" content="MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents" />
+  <meta property="og:title" content="MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents" />
+  <meta property="og:description"
+    content="A comprehensive benchmark and framework for evaluating shortcut-augmented mobile GUI agents" />
+  <meta property="og:url" content="https://Pengxiang-zhao.github.io/MAS-Bench" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/pipeline.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents">
+  <meta name="twitter:description"
+    content="A comprehensive benchmark and framework for evaluating shortcut-augmented mobile GUI agents">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/pipeline.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Mobile GUI, Shortcuts, Deep Links, API, RPA, GUI Hybrid Agents, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents</title>
+  <link rel="icon" type="image/png" href="static/images/mas-03.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .results-carousel .item {
+      margin: auto;
+    }
+    .results-carousel .item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-height: 60vh;
+    }
+    .table-container .highlight {
+      background-color: #f5f5f5; /* Light grey for highlighted rows */
+    }
+    th, td {
+      vertical-align: middle !important;
+    }
+    table td:not(:first-child),
+    table th:not(:first-child) {
+      text-align: center;
+    }
+    .publication-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="publication-title-container">
+              <h1 class="title is-1 publication-title has-text-centered">MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents</h1>
+            </div>
+            <div class="is-size-5 publication-authors has-text-centered">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="#" target="_blank">Pengxiang Zhao</a><sup>1&#8224;</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Guangyi Liu</a><sup>1&#8224;</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yaozhen Liang</a><sup>1&#8224;</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Weiqing He</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Zhengxi Lu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yuehao Huang</a><sup>1</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="#" target="_blank">Yaxuan Guo</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Kexin Zhang</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Hao Wang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Liang Liu</a><sup>2&#8225;</sup>,</span>
+              <span class="author-block">
+                <a href="#" target="_blank">Yong Liu</a><sup>1&#9993;</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors has-text-centered">
+              <span class="author-block">
+                <sup>1</sup> Zhejiang University &nbsp;&nbsp;&nbsp;<sup>2</sup> vivo AI Lab &nbsp;&nbsp;&nbsp;<sup>3</sup>
+                Huzhou Institute of Zhejiang University
+              </span>
+              <span class="eql-cntrb"><small><br>
+                  <sup>&#8224;</sup> Equal Contribution &nbsp;&nbsp;&nbsp;
+                  <sup>&#8225;</sup> Project Leader &nbsp;&nbsp;&nbsp;
+                  <sup>&#9993;</sup> Corresponding Author
+                </small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Paper link -->
+                <span class="link-block">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/Pengxiang-zhao/MAS-Bench" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (coming soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main figure (pipeline as first image) -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/pipeline.png" alt="MAS-Bench Pipeline" width="100%">
+        <h2 class="subtitle has-text-centered">
+          <strong>The pipeline of MAS-Bench.</strong> The GUI-Shortcut agent first filters products using the
+          <em>search_product</em> shortcut, selects an item via GUI operations, and then adds it to the cart using the
+          <em>add_to_cart</em> shortcut. The entire process is monitored by an automated evaluation module, which
+          outputs metrics such as success rate and efficiency.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End main figure -->
+
+  <!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            To enhance the efficiency of GUI agents on various platforms like smartphones and computers, a hybrid
+            paradigm that combines flexible GUI operations with efficient shortcuts (e.g., API, deep links) is
+            emerging as a promising direction. However, a framework for systematically benchmarking these hybrid agents
+            is still underexplored. To take the first step in bridging this gap, we introduce <strong>MAS-Bench</strong>,
+            a benchmark that pioneers the evaluation of GUI-shortcut hybrid agents with a specific focus on the mobile
+            domain. Beyond merely using predefined shortcuts, MAS-Bench assesses an agent's capability to
+            <em>autonomously generate</em> shortcuts by discovering and creating reusable, low-cost workflows. It
+            features 139 complex tasks across 11 real-world applications, a knowledge base of 88 predefined shortcuts
+            (APIs, deep-links, RPA scripts), and 7 evaluation metrics. The tasks are designed to be solvable via
+            GUI-only operations, but can be significantly accelerated by intelligently embedding shortcuts. Experiments
+            show that hybrid agents achieve significantly higher success rates and efficiency than their GUI-only
+            counterparts. This result also demonstrates the effectiveness of our method for evaluating an agent's
+            shortcut generation capabilities. MAS-Bench fills a critical evaluation gap, providing a foundational
+            platform for future advancements in creating more efficient and robust intelligent agents.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Abstract -->
+
+  <!-- Highlights -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content">
+              <ul>
+                <li><strong>Comprehensive Benchmark</strong>: We introduce MAS-Bench, the first benchmark for
+                  systematically evaluating GUI-shortcut hybrid mobile agents, featuring 139 tasks, 11 apps, 88
+                  predefined shortcuts, and 7 evaluation metrics.</li>
+                <li><strong>Hybrid Agent Baselines</strong>: We show that hybrid agents on MAS-Bench significantly
+                  outperform GUI-only counterparts in both success rate and efficiency.</li>
+                <li><strong>Shortcut Generation Evaluation</strong>: We propose the first framework to evaluate an
+                  agent's ability to generate new shortcuts, revealing a key research gap between the performance of
+                  predefined and agent-generated shortcuts.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Highlights -->
+
+  <!-- MAS-Bench details -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">MAS-Bench</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/teaser.png" alt="GUI Only vs. Hybrid Agent">
+            <p class="is-size-6 mt-2 has-text-centered"><strong>Workflow of GUI Only vs. GUI-Shortcut Hybrid Agent.</strong> Shortcuts improve agent execution efficiency by bypassing GUI operations.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/api_deeplink_rpa.png" alt="Shortcut Modalities">
+            <p class="is-size-6 mt-2 has-text-centered"><strong>Functional Comparison of APIs, Deep Links, and RPA Scripts.</strong>
+              Example from Amazon app: (a) the <em>open_cart()</em> API opens the cart; (b) the
+              <em>search_product()</em> deep link performs product search; (c) an RPA script combines APIs, deep
+              links, and GUI operations to automate a workflow.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/pipeline.png" alt="MAS-Bench Pipeline">
+            <p class="is-size-6 mt-2 has-text-centered"><strong>The pipeline of MAS-Bench.</strong> The GUI-Shortcut agent first filters products using the <em>search_product()</em> shortcut, selects an item via GUI operations, and then adds it to the cart using the <em>add_to_cart()</em> shortcut. The entire process is monitored by an automated evaluation module, which outputs metrics such as success rate and efficiency.</p>
+          </div>
+          <div class="item">
+            <img src="static/images/generation_evaluation.png" alt="Shortcut Generation Evaluation">
+            <p class="is-size-6 mt-2 has-text-centered"><strong>Evaluation Workflow for Agents' Shortcut Generation
+              Capability.</strong> The process consists of two stages: (a) Shortcut Generation Stage, where the
+            agent creates its shortcut knowledge base; and (b) Quality Evaluation Stage where the generated shortcuts are imported into a baseline agent for performance testing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End MAS-Bench details -->
+
+  <!-- Results -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Experiments Results</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                Our experiments show that hybrid agents evaluated on MAS-Bench achieve significantly higher success
+                rates and reduced interaction costs compared to GUI-only agents. Detailed quantitative comparisons and
+                ablations are provided below.
+              </p>
+
+              <!-- Results tables -->
+              <div class="table-container mt-5">
+                <table class="table is-fullwidth is-striped is-hoverable is-bordered is-narrow">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">Agent</th>
+                      <th colspan="2">Input</th>
+                      <th rowspan="2">SR ↑</th>
+                      <th colspan="2">Efficiency</th>
+                      <th colspan="2">Cost</th>
+                      <th rowspan="2">GSAR ↑</th>
+                    </tr>
+                    <tr>
+                      <th>SS</th>
+                      <th>VH</th>
+                      <th>MSRS ↓</th>
+                      <th>MET ↓</th>
+                      <th>MToC ↓</th>
+                      <th>MSC ↑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th colspan="9"><em>Single-app Tasks (92 Tasks)</em></th>
+                    </tr>
+                    <tr>
+                      <td><em>Human</em></td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>-</td>
+                      <td><em>1.000</em></td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>T3A</td>
+                      <td></td>
+                      <td>✓</td>
+                      <td>0.511</td>
+                      <td>1.056</td>
+                      <td>137.641</td>
+                      <td>346.382</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>M3A</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                      <td>0.565</td>
+                      <td>1.064</td>
+                      <td>192.775</td>
+                      <td>155.281</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>MobileAgentV2</td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>0.446</td>
+                      <td>1.058</td>
+                      <td>1013.386</td>
+                      <td>120.212</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>MobileAgent-E</td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>0.359</td>
+                      <td>0.818</td>
+                      <td>459.574</td>
+                      <td>88.772</td>
+                      <td>0.378</td>
+                      <td>0.081</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td><strong>MAS-T3A (Ours)</strong></td>
+                      <td></td>
+                      <td>✓</td>
+                      <td>0.576</td>
+                      <td>0.915</td>
+                      <td><strong>129.279</strong></td>
+                      <td>291.391</td>
+                      <td>1.043</td>
+                      <td>0.117</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td><strong>MAS-MobileAgent (Ours)</strong></td>
+                      <td>✓</td>
+                      <td></td>
+                      <td><strong>0.641</strong></td>
+                      <td><strong>0.613</strong></td>
+                      <td>682.547</td>
+                      <td><strong>99.780</strong></td>
+                      <td><strong>1.348</strong></td>
+                      <td><strong>0.345</strong></td>
+                    </tr>
+                    <tr>
+                      <th colspan="9"><em>Cross-app Tasks (47 Tasks)</em></th>
+                    </tr>
+                    <tr>
+                      <td><em>Human</em></td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>-</td>
+                      <td><em>1.000</em></td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>T3A</td>
+                      <td></td>
+                      <td>✓</td>
+                      <td>0.340</td>
+                      <td>1.087</td>
+                      <td>257.122</td>
+                      <td>625.970</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>M3A</td>
+                      <td>✓</td>
+                      <td>✓</td>
+                      <td>0.383</td>
+                      <td>1.262</td>
+                      <td>411.145</td>
+                      <td>288.833</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>MobileAgentV2</td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>0.170</td>
+                      <td>1.247</td>
+                      <td>2053.133</td>
+                      <td>227.128</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>MobileAgent-E</td>
+                      <td>✓</td>
+                      <td></td>
+                      <td>0.064</td>
+                      <td>0.934</td>
+                      <td>469.109</td>
+                      <td>85.859</td>
+                      <td>2.250</td>
+                      <td>0.177</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td><strong>MAS-T3A (Ours)</strong></td>
+                      <td></td>
+                      <td>✓</td>
+                      <td>0.511</td>
+                      <td><strong>0.643</strong></td>
+                      <td><strong>185.911</strong></td>
+                      <td>440.222</td>
+                      <td>2.213</td>
+                      <td>0.185</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td><strong>MAS-MobileAgent (Ours)</strong></td>
+                      <td>✓</td>
+                      <td></td>
+                      <td><strong>0.617</strong></td>
+                      <td>0.829</td>
+                      <td>1441.586</td>
+                      <td><strong>189.836</strong></td>
+                      <td><strong>3.128</strong></td>
+                      <td><strong>0.320</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="is-size-7 mt-1"><strong>Table: Performance comparison of our MAS agents and baseline
+                    methods on MAS-Bench with a predefined shortcuts knowledge base.</strong> All agents utilize the
+                  Gemini-1.5-Pro. SS and VH refer to the Screenshot and View Hierarchy (UI Tree) input modalities. MSRS
+                  is the Mean Step Ratio on Successful tasks, MET is the Mean Execution Time in seconds, and MToC is the
+                  Mean Token Cost in thousands (kTokens). The SSR for the predefined shortcuts is 1.0.</p>
+              </div>
+
+              <div class="has-text-centered mt-6">
+                <img src="static/images/experiment-result.png" alt="Experiment Result Figure" style="width:100%; border: 1px solid #e5e5e5; border-radius: 6px;">
+                <p class="is-size-7 mt-2"><strong>Figure: Performance comparison of MAS-MobileAgent with and without
+                    shortcuts.</strong> The base models are Gemini-2.5-Pro and Gemini-2.0-Flash. Data points show the
+                  relationship between SR and MET for single-app and cross-app tasks, with circle size representing mean
+                  cost. Results demonstrate that shortcuts benefit both models, with more significant improvements for
+                  the weaker Gemini-2.0-Flash.</p>
+              </div>
+
+              <div class="has-text-centered mt-6">
+                <img src="static/images/shortcut_example.png" alt="Shortcut Examples" style="width:100%; border: 1px solid #e5e5e5; border-radius: 6px;">
+                <p class="is-size-7 mt-2"><strong>Figure: Examples of the resulting shortcut types.</strong> Action Replay shortcuts (Task-Level and Subtask-Level) use a sequence of actions with fixed indices, while Dynamic Shortcuts use variable arguments that correspond to UI elements.</p>
+              </div>
+
+              <div class="table-container mt-6">
+                <table class="table is-fullwidth is-striped is-hoverable is-bordered is-narrow">
+                  <thead>
+                    <tr>
+                      <th>Shortcut</th>
+                      <th>SR ↑</th>
+                      <th>SSR ↑</th>
+                      <th>MSRS ↓</th>
+                      <th>MSC ↑</th>
+                      <th>MET ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><em>Human</em></td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td><em>1.00</em></td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr class="highlight">
+                      <td><em>Baseline</em></td>
+                      <td>0.43</td>
+                      <td>-</td>
+                      <td>0.96</td>
+                      <td>-</td>
+                      <td>188.93</td>
+                    </tr>
+                    <tr>
+                      <td>S<sub>Predefined</sub></td>
+                      <td><strong>0.52</strong></td>
+                      <td><strong>1.00</strong></td>
+                      <td><strong>0.71</strong></td>
+                      <td>1.45</td>
+                      <td><strong>152.15</strong></td>
+                    </tr>
+                    <tr>
+                      <td>S<sub>Replay-Task</sub></td>
+                      <td>0.34</td>
+                      <td>0.10</td>
+                      <td>0.91</td>
+                      <td><strong>3.04</strong></td>
+                      <td>244.61</td>
+                    </tr>
+                    <tr>
+                      <td>S<sub>Replay-Subtask</sub></td>
+                      <td>0.43</td>
+                      <td>0.73</td>
+                      <td>1.13</td>
+                      <td>1.22</td>
+                      <td>236.67</td>
+                    </tr>
+                    <tr>
+                      <td>S<sub>Dynamic</sub></td>
+                      <td>0.38</td>
+                      <td>0.75</td>
+                      <td>0.82</td>
+                      <td>0.91</td>
+                      <td>216.24</td>
+                    </tr>
+                    <tr>
+                      <td>S<sub>MobileAgent-E</sub></td>
+                      <td>0.49</td>
+                      <td>0.71</td>
+                      <td>1.00</td>
+                      <td>1.01</td>
+                      <td>224.87</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="is-size-7 mt-1"><strong>Table: The results of different shortcut generation methods.</strong>
+                  Column definitions: SR (success rate), MSRS (Mean Step Ratio on Successful tasks), MSC (Mean Shortcut
+                  Call Count), SSR (Shortcut Success Rate), MET (Mean Execution Time).</p>
+              </div>
+
+              <div class="has-text-centered mt-6">
+                <img src="static/images/badcase.png" alt="Failure Case Analysis" style="width:100%; border: 1px solid #e5e5e5; border-radius: 6px;">
+                <p class="is-size-7 mt-2"><strong>Figure: Failure cases for shortcut generation.</strong> This figure illustrates common failure modes, including <strong>(a) incorrect tool selection, (b) improper parameter grounding, and (c) catastrophic forgetting,</strong> which hinder the agent's ability to create robust and reliable shortcuts.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Results -->
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{masbench2025,
+  title={MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents},
+  author={Zhao, Pengxiang and Liu, Guangyi and Liang, Yaozhen and He, Weiqing and Lu, Zhengxi and Huang, Yuehao and Guo, Yaxuan and Zhang, Kexin and Wang, Hao and Liu, Liang and Liu, Yong},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
