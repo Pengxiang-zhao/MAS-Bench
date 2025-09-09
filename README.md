@@ -31,17 +31,20 @@ To enhance the efficiency of GUI agents on various platforms like smartphones an
 ## Code (Under Updating)
 
 
-<!-- ## Citation
+## Citation
 
 If you find our work useful, please consider citing our paper:
 
 ```bibtex
-@article{masbench2025,
-  title={MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents},
-  author={Zhao, Pengxiang and Liu, Guangyi and Liang, Yaozhen and He, Weiqing and Lu, Zhengxi and Huang, Yuehao and Guo, Yaxuan and Zhang, Kexin and Wang, Hao and Liu, Liang and Liu, Yong},
-  journal={arXiv preprint arXiv:xxxx.xxxxx},
-  year={2025}
+@misc{zhao2025masbench,
+      title={MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents}, 
+      author={Pengxiang Zhao and Guangyi Liu and Yaozhen Liang and Weiqing He and Zhengxi Lu and Yuehao Huang and Yaxuan Guo and Kexin Zhang and Hao Wang and Liang Liu and Yong Liu},
+      year={2025},
+      eprint={2509.06477},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2509.06477}, 
 }
-``` -->
+```
 
 
