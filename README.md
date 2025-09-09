@@ -1,6 +1,10 @@
 # MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents
 
-**[Project Page](https://pengxiang-zhao.github.io/MAS-Bench/)**
+<div align="center">
+  <a href="https://arxiv.org/abs/2509.06477"><img src="https://img.shields.io/badge/Arxiv-2509.06477-b31b1b.svg?logo=arXiv" alt="Arxiv"></a>
+  <a href="https://pengxiang-zhao.github.io/MAS-Bench/"><img src="https://img.shields.io/badge/Project-Page-Green" alt="Project Page"></a>
+  <a href="https://github.com/Pengxiang-zhao/MAS-Bench/stargazers"><img src="https://img.shields.io/github/stars/Pengxiang-zhao/MAS-Bench?style=social" alt="GitHub Stars"></a>
+</div>
 
 ## Overview
 
